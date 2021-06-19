@@ -24,3 +24,27 @@
 *<p align="center"> log<sub>a</sub> b ≡ α<sub>1</sub> log<sub>a</sub> b<sub>1</sub> + ... + α<sub>k</sub> log<sub>a</sub> b<sub>k</sub> (mod q) </p>*
 
 Это свойство будет использоваться дальше в методе Адельмана.
+
+## Метод Адельмана
+
+### Базовая идея
+
+Допустим, что у нас есть таблица простых чисел меньних B
+*<p align="center"> __F__ = {p<sub>1</sub>, p<sub>2</sub>, ..., p<sub>s</sub>}, ∀p∈F p&lt;B </p>*
+мы будем называть эту таблицу факторной базой.
+И допустим, что мы знаем значения логарифмов всех элементов факторной базы по основанию *a*, то есть мы знаем величины 
+
+*<p align="center">x<sub>1</sub> ≡ log<sub>a</sub> p<sub>1</sub> (mod q)</p>* 
+*<p align="center">x<sub>2</sub> ≡ log<sub>a</sub> p<sub>2</sub> (mod q)</p>* 
+*<p align="center">...</p>*
+*<p align="center">x<sub>s</sub> ≡ log<sub>a</sub> p<sub>s</sub> (mod q)</p>*
+
+Тогда, если мы нашли вычет *ξ* ∈ *F<sub>q</sub><sup>\*</sup>* такой, что 
+*<p align="center"> b<sup>ξ</sup> ≡ p<sub>1</sub><sup>α<sub>1</sub></sup> \* ... \* p<sub>s</sub><sup>α<sub>s</sub></sup> (mod p), </p>*
+где *α<sub>i</sub>* ≥ 0 и p<sub>i</sub> ∈ *__F__* ∀ *i*=0,...,*s*,
+то воспользовавшись свойством логарифма, описанным выше, получаем искомое решение поставленной задачи
+*<p align="center"> log<sub>a</sub> b ≡ ξ<sup>-1</sup> \* (α<sub>1</sub> log<sub>a</sub> p<sub>1</sub> + ... + α<sub>s</sub> log<sub>a</sub> p<sub>s</sub>) (mod q) </p>*
+
+Таким образом метод Адельмана сводится к двум последовательным шагам:
+1. Построение факторной базы и нахождение логарифмов элементов этой базы
+2. Подсчёт значения искомого логарифма.
