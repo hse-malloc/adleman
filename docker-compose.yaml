@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  j:
+    image: sagemath/sagemath
+    volumes:
+      - './:/home/sage/work'
+    ports:
+      - '8888:8888'
+    command: sage-jupyter
